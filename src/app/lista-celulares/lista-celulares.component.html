@@ -1,0 +1,18 @@
+
+    <table class="table table-dark">
+            <th></th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Descripcion</th>
+        <tbody>
+            <tr *ngFor="let celular of celulares" class="celulares" [ngClass]="{'oferta': celular.oferta}">
+                <td class="imagen"><img class="imagen-celular" src="{{celular.img}}" alt="imagen"></td>
+                <td class="nombre">{{celular.nombre}}</td>
+                <td class="precio">{{celular.precio}}</td>
+                <td class="descripcion">{{celular.descripcion}}</td>
+                <td>
+                    <app-input-numerico [celular]="celular" *ngIf="celular.stock > 0" ></app-input-numerico>
+                </td>
+            </tr>
+        </tbody>
+    </table>
